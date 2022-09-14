@@ -61,6 +61,7 @@ main{
     align-items: center;
     padding: 20px;
     display: flex;
+    text-align: center;
 }
 .winner{
     display:none;
@@ -70,7 +71,9 @@ main{
     justify-content: center;
     align-items: center;
     height: 240px;
+    text-align: center;
     background-color: darkgreen;
+    text-align: center;
 }
 
 .play-again{
@@ -96,3 +99,61 @@ main{
     font-size: 40px;
     
 }
+
+@media screen and (max-width: 1280px) {
+ .option-item{
+    border-radius: 50px;
+    border:5px solid steelblue;
+    padding:50px;
+    background-color: steelblue;
+    width:100px;
+    height:100px;
+}
+}
+
+@media screen and (max-width: 920px) {
+ .option-item{
+    border-radius: 50px;
+    border:5px solid steelblue;
+    padding:50px;
+    margin:5px;
+    background-color: steelblue;
+    width:100px;
+    height:100px;
+}
+.option-list{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+}
+@media screen and (max-width: 420px) {
+ .option-item{
+    border-radius: 50px;
+    border:5px solid steelblue;
+    padding:10px;
+    margin:5px;
+    background-color: steelblue;
+    width:70px;
+    height:70px;
+}
+.option-list{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+}
+

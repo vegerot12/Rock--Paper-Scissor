@@ -4,6 +4,9 @@ let result = ''
 let playerWonCur = false
 let playerScore = document.querySelector('#player-score').textContent
 let computerScore = document.querySelector('#computer-score').textContent
+let computerScoreCard = document.querySelector('#computer-score')
+let playerScoreCard = document.querySelector('#player-score')
+
 let winner = -1
 let winnerDeclaration = ''
 let winnerDiv = document.querySelector('.winner')
@@ -17,14 +20,12 @@ const updateResult = () => {
     if(playerWonCur){
 
         playerScore++
-let playerScoreCard = document.querySelector('#player-score')
 playerScoreCard.textContent = playerScore
 
     }
     else{
 
         computerScore++
-let computerScoreCard = document.querySelector('#computer-score')
 computerScoreCard.textContent = computerScore
 
 
@@ -37,12 +38,13 @@ resultDiv.style.background= playerWonCur ? '#7fd97f':'#d12c2080'
     { 
       winner = playerScore==5 ? 0 : 1 // 0 - player -- 1-comp
       resultDiv.style.display = 'none'
-      winnerDeclaration = winner ? 'BETTER LUCK NEXT TIME' : 'CONGARTULATIONS!'
+      winnerDeclaration = winner ? 'YOU LOST!' : 'YOU WON!'
       winnerDiv.textContent = winnerDeclaration
       winnerDiv.style.display = 'flex'
       winnerDiv.style.background = winner ? '#d12c2080':'#7fd97f'
       optionsDiv.style.display ='none'
       playAgainDiv.style.display='flex'
+     
 
       
     }
@@ -127,6 +129,8 @@ const playAgain = () =>{
 winnerDiv.style.display = 'none'
       optionsDiv.style.display ='flex'
       playAgainDiv.style.display='none'
+       playerScoreCard.textContent =0
+      computerScoreCard.textContent=0
     })
     
 }
