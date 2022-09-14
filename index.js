@@ -32,6 +32,7 @@ computerScoreCard.textContent = computerScore
 
     }
     console.log(result)
+    resultDiv.style.display ='flex'
 resultDiv.textContent = result
 resultDiv.style.background= playerWonCur ? '#7fd97f':'#d12c2080'
 
@@ -126,6 +127,7 @@ const optionHandler = () =>{
 winnerDiv.style.display = 'none'
       optionsDiv.style.display ='flex'
       playAgainDiv.style.display='none'
+      result = player = computer =''
        playerScoreCard.textContent =0
       computerScoreCard.textContent=0
       playerScore=0
