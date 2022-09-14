@@ -6,7 +6,7 @@ let playerScore = document.querySelector('#player-score').textContent
 let computerScore = document.querySelector('#computer-score').textContent
 let computerScoreCard = document.querySelector('#computer-score')
 let playerScoreCard = document.querySelector('#player-score')
-
+let isTie = false
 let winner = -1
 let winnerDeclaration = ''
 let winnerDiv = document.querySelector('.winner')
@@ -17,13 +17,14 @@ let playAgainDiv = document.querySelector('.play-again')
 
 console.log(optionsDiv)
 const updateResult = () => {
-    if(playerWonCur){
+    
+    if(!isTie && playerWonCur){
 
         playerScore++
 playerScoreCard.textContent = playerScore
 
     }
-    else{
+    else if(!isTie && !playerWonCur){
 
         computerScore++
 computerScoreCard.textContent = computerScore
@@ -120,21 +121,23 @@ const optionHandler = () =>{
         player = e.target.id
         computerChoice()
   })
-});
-
-   
-}
-const playAgain = () =>{
-    playAgainDiv.addEventListener('click',()=>{
+  playAgainDiv.addEventListener('click',()=>{
+        // alert('again')
 winnerDiv.style.display = 'none'
       optionsDiv.style.display ='flex'
       playAgainDiv.style.display='none'
        playerScoreCard.textContent =0
       computerScoreCard.textContent=0
+      playerScore=0
+      computerScore=0
+      console.log(playerScoreCard.textContent 
+,computerScoreCard.textContent,"playerScore,computerScore")
     })
-    
+});
+
+   
 }
+
 optionHandler();
 
-playAgain()
 
